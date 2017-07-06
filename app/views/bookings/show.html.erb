@@ -1,0 +1,31 @@
+<table>
+  <h1>Flight Details</h1>
+
+  <thead>
+    <th>Flight #</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Departure</th>
+  </thead>
+  <tbody>
+
+    <tr>
+      <%= render 'flights/flights', flight: @booking.flight%>
+    <tr>
+  </tbody>
+</table>
+<table>
+  <h1>Passenger Details</h1>
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+  </thead>
+  <tbody>
+    <% @booking.passengers.each do |p| %>
+    <tr>
+      <td><%= p.name%></td>
+      <td><%= p.email %></td>
+    <tr>
+    <% end %>
+  </tbody>
+</table>

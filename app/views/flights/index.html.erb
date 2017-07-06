@@ -1,3 +1,29 @@
 <div class="well well-lg">
   <%= render 'flights/search' %>
 </div>
+</br>
+<% if @flights %>
+<table>
+  <legend>Select a Flight</legend>
+  <%= form_tag(new_booking_path, method: :get) do %>
+  <thead>
+    <th></th>
+    <th>Flight #</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Departure</th>
+
+  </thead>
+  <tbody>
+    <% @flights.each do |flight| %>
+    <tr>
+      <td><%= radio_button_tag(:flight_id, flight.id, class: 'radio') %></td>
+      <%= render 'flights/flights', flight: flight%>
+    <tr>
+    <% end %>
+  </tbody>
+</table>
+<%= hidden_field_tag(:passengers, params[:passengers]) %>
+<%= submit_tag('Choose Flight', class: 'btn btn-success btn-lg') %>
+<% end %>
+<% end %>

@@ -1,0 +1,33 @@
+<table>
+  <h1>Details</h1>
+
+  <thead>
+    <th>Flight #</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Departure</th>
+  </thead>
+  <tbody>
+    <tr>
+      <%= render 'flights/flights', flight: @flight%>
+    <tr>
+  </tbody>
+</table>
+
+<%= form_for(@booking) do |b| %>
+  <%= b.hidden_field(:flight_id, value: @flight.id) %>
+
+  <%= b.fields_for :passengers do |p| %>
+
+  <div .class="form-group">
+    <%= p.label :name %>
+    <%= p.text_field :name, class: 'form-control' %>
+
+    <%= p.label :email %>
+    <%= p.email_field :email, class: 'form-control' %>
+  </div>
+
+
+  <% end %>
+  <%= b.submit "Book Flights" %>
+<% end %>
