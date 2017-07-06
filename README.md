@@ -1,24 +1,7 @@
-# README
+# Flight-Booker
+Flight-Booker is a miniature project for Rails practice.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The purpose of the project is to work on my complex form knowledge, and to reinforce all previous learning.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project is part of [TheOdinProject's](http://www.theodinproject.com) Rails track.
+The project itself can be seen [here](https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms?ref=lnav)!
