@@ -1,0 +1,17 @@
+<%= form_tag(flights_path, method: "get") do %>
+  <%= label_tag(:origin, "From:")%>
+  <%= select_tag(:origin,options_for_select(@airport_options)) %>
+  </br>
+  <%= label_tag(:origin, "To:")%>
+  <%= select_tag(:destination,options_for_select(@airport_options)) %>
+  </br>
+  <%= label_tag(:origin, "Passengers:")%>
+  <%= select_tag(:passengers, options_for_select((1..4).step(1))) %>
+  </br>
+  <%= label_tag(:origin, "Departure:")%>
+  <%= select_tag(:date, options_for_select(@dates)) %>
+  </br>
+
+  <%= submit_tag "Search", :name => nil %>
+
+<% end %>
