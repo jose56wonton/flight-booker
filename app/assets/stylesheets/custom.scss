@@ -46,7 +46,6 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
 }
 
 p {
@@ -97,7 +96,7 @@ p {
 
  input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  
+
   margin-bottom: 15px;
   @include box_sizing;
 }

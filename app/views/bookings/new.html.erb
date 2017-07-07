@@ -25,6 +25,7 @@
         <%= b.fields_for :passengers do |p| %>
 
         <div .class="form-group">
+          <h2>Passenger <%= p.options[:child_index] +1%> </h2>
           <%= p.label :name %>
           <%= p.text_field :name, class: 'form-control' %>
 
