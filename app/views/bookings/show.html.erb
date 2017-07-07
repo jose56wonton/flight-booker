@@ -1,31 +1,46 @@
-<table>
-  <h1>Flight Details</h1>
 
-  <thead>
-    <th>Flight #</th>
-    <th>From</th>
-    <th>To</th>
-    <th>Departure</th>
-  </thead>
-  <tbody>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="well well-lg">
+      <table class="table">
+        <h3>Flight Details</h3>
 
-    <tr>
-      <%= render 'flights/flights', flight: @booking.flight%>
-    <tr>
-  </tbody>
-</table>
-<table>
-  <h1>Passenger Details</h1>
-  <thead>
-    <th>Name</th>
-    <th>Email</th>
-  </thead>
-  <tbody>
-    <% @booking.passengers.each do |p| %>
-    <tr>
-      <td><%= p.name%></td>
-      <td><%= p.email %></td>
-    <tr>
-    <% end %>
-  </tbody>
-</table>
+        <thead>
+          <th>Flight #</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Time</th>
+          <th>Date</th>
+          <th>Duration</th>
+        </thead>
+        <tbody>
+
+          <tr>
+            <%= render 'flights/flights', flight: @booking.flight%>
+            <td>
+              <%= @booking.flight.duration %> hrs
+            </td>
+          <tr>
+
+        </tbody>
+      </table>
+      <table class="table">
+        <h3>Passenger Details</h3>
+        <thead>
+          <th>Name</th>
+          <th>Email</th>
+        </thead>
+        <tbody>
+          <% @booking.passengers.each do |p| %>
+          <tr>
+            <td><%= p.name%></td>
+            <td><%= p.email %></td>
+          <tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+</div>

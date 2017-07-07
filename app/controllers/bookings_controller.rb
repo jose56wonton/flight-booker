@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
       flash[:success] = "Flights booked successfully!"
       redirect_to @booking
     else
-      @flight = Flight.find(params[:flight_id])
+      @flight = Flight.find(params[:booking][:flight_id])
       flash.now[:danger] = "Please enter valid passenger information"
       render 'new'
     end

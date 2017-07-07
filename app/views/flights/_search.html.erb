@@ -1,15 +1,15 @@
 <%= form_tag(flights_path, method: "get") do %>
   <%= label_tag(:origin, "From:")%>
-  <%= select_tag(:origin, options_for_select(@airport_options)) %>
+  <%= select_tag(:origin, options_for_select(@airport_options), class: 'form-control') %>
   </br>
   <%= label_tag(:destination, "To:")%>
-  <%= select_tag(:destination,options_for_select(@airport_options)) %>
+  <%= select_tag(:destination,options_for_select(@airport_options), class: 'form-control') %>
   </br>
   <%= label_tag(:passengers, "Passengers:")%>
-  <%= select_tag(:passengers, options_for_select((1..4).step(1))) %>
+  <%= select_tag(:passengers, options_for_select((1..4).step(1)), class: 'form-control') %>
   </br>
   <%= label_tag(:date, "Departure:")%>
-  <%= select_tag(:date, options_for_select(@dates)) %>
+  <%= select_tag(:date, options_for_select(@dates), class: 'form-control') %>
   </br>
-    <%= submit_tag("Search", id: 'search') %>
+    <%= submit_tag("Search", id: 'search', class: "btn btn-primary") %>
 <% end %>

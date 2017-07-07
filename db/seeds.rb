@@ -11,11 +11,22 @@ a3 = Airport.create(code:'NYC')
 a4 = Airport.create(code:'ATL')
 a5 = Airport.create(code:'ORD')
 a6 = Airport.create(code:'LHR')
+airports = [a1,a2,a3,a4,a5,a6]
 
+dates =[]
+10.times {dates <<Faker::Date.forward(30)}
 
-Flight.create(origin_id:a1.id ,destination_id: a3.id ,
-departure_date: (Time.now + 10.days),duration: 5)
-Flight.create(origin_id:a2.id ,destination_id: a4.id ,
-departure_date: (Time.now + 5.days),duration: 5)
-Flight.create(origin_id:a5.id ,destination_id: a6.id ,
-departure_date: (Time.now + 7.days),duration: 5)
+airports.each_with_index do |a,i|
+  airports.each_with_index do |b,j|
+    if(i!=j)
+      dates.each do |d|
+        3.times do
+          Flight.create(origin_id: (a.id),
+                      destination_id: (b.id),
+                      departure_date: Faker::Time.between(d.beginning_of_day, d.end_of_day),
+                      duration: rand(3..10))
+        end
+      end
+    end
+  end
+end
