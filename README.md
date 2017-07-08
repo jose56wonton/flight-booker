@@ -11,6 +11,6 @@ a fight!
 
 ### Usage
 
-The project is deployed as of July 2017. Check it out [here](https://flight-booker-jw.herokuapp.com/).
+The project is deployed as of July 2017. Check it out [here](https://flight-booker-jw.herokuapp.com/).</br>
 This project is part of [TheOdinProject's](http://www.theodinproject.com) Rails track.
-The project itself can be seen [here](https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms?ref=lnav)!
+More details on project objectives can be seen [here](https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms?ref=lnav)!
