@@ -11,6 +11,9 @@ class BookingsController < ApplicationController
     if @booking.save
       flash[:success] = "Flights booked successfully!"
       redirect_to @booking
+      @booking.passengers.each do |p|
+        PassengerMailer.thank_you(p).deliver_now
+      end
     else
       @flight = Flight.find(params[:booking][:flight_id])
       flash.now[:danger] = "Please enter valid passenger information"
